@@ -17,44 +17,39 @@ ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip, 
 import ComentarioIcono from '../assets/images/comentario.svg';
 import ComentarioIconoEnviado from '../assets/images/comentario_enviado.svg';
 
-
-const NivelBasico: React.FC = () => {
+const NivelAlto: React.FC = () => {
     const preguntas = [
-        // Procesos de Gobernanza y Gestión
-        "¿Existe una política formal de gobernanza de datos en la empresa?",
-        "¿Los datos se manejan con prácticas estandarizadas y consistentes?",
-        "¿La empresa cuenta con medidas básicas para asegurar la privacidad y seguridad de los datos?",
-        "¿Hay roles y responsabilidades claros para la gestión de los datos?",
-        "¿Las políticas de manejo de datos están documentadas y accesibles para todos?",
-
-        // Procesos Analíticos
-        "¿Se generan reportes básicos regularmente para apoyar la toma de decisiones?",
-        "¿Los análisis de datos suelen realizarse de manera estructurada y consistente?",
-        "¿La empresa utiliza herramientas básicas para el análisis de datos, como hojas de cálculo?",
-        "¿Los datos se emplean en algunos procesos de toma de decisiones?",
-        "¿Existen procedimientos mínimos para la recopilación y verificación de datos?",
-
-        // Infraestructura Tecnológica
-        "¿La empresa cuenta con un sistema básico para almacenar sus datos?",
-        "¿Los datos pueden ser accesibles para los empleados que los necesitan, aunque sea de manera limitada?",
-        "¿Existen herramientas básicas para realizar análisis de datos, aunque sea manualmente?",
-        "¿La infraestructura tecnológica permite el manejo de datos esenciales, aunque sin automatización?",
-        "¿Los sistemas de almacenamiento y procesamiento de datos son suficientes para el volumen de datos actual?",
-
-        // Capacidades y Competencias
-        "¿El equipo tiene competencias básicas para trabajar con datos, como conocimientos de hojas de cálculo?",
-        "¿Los empleados están familiarizados con los conceptos básicos de análisis de datos?",
-        "¿Existen capacitaciones o recursos para mejorar las habilidades en el manejo de datos?",
-        "¿La empresa reconoce la importancia de contar con habilidades de análisis de datos?",
-        "¿Hay colaboradores asignados que poseen experiencia básica en gestión de datos?",
-
-        // Estrategia y Cultura
-        "¿La analítica y el uso de datos se consideran al tomar decisiones estratégicas, aunque de forma limitada?",
-        "¿La empresa valora los datos, aunque no son un elemento fundamental en todas las decisiones?",
-        "¿Se reconoce en algunos niveles de la empresa la importancia de una cultura basada en datos?",
-        "¿La organización está comenzando a crear conciencia sobre el valor de los datos?",
-        "¿Existen esfuerzos iniciales para integrar el uso de datos en la cultura de la empresa?"
+        "¿La empresa cuenta con políticas avanzadas de gobernanza de datos que están alineadas y se actualizan regularmente con las mejores prácticas de la industria?",
+        "¿Existen procesos rigurosos y automatizados para asegurar la calidad y exactitud de los datos en toda la organización?",
+        "¿La gestión de datos incluye protocolos de seguridad avanzados, y los roles y accesos están definidos de manera granular y dinámica?",
+        "¿Los estándares de gobernanza de datos son revisados y mejorados de forma continua para adaptarse a nuevos desafíos y regulaciones?",
+        "¿La gobernanza de datos está integrada en todas las áreas de la empresa y respalda los objetivos estratégicos de manera efectiva?",
+    
+        "¿La empresa utiliza análisis predictivo y prescriptivo avanzado para la toma de decisiones en todas las áreas estratégicas?",
+        "¿Los procesos analíticos están automatizados y permiten generar insights en tiempo real para diferentes departamentos?",
+        "¿Se utilizan técnicas avanzadas de modelado y análisis de datos, incluyendo machine learning e inteligencia artificial?",
+        "¿Los datos se emplean de manera proactiva para identificar y mitigar riesgos, optimizar procesos y descubrir oportunidades de negocio?",
+        "¿Existe una sólida infraestructura que soporta modelos analíticos avanzados y facilita la experimentación y mejora continua de los procesos?",
+    
+        "¿La empresa cuenta con una infraestructura tecnológica escalable que permite manejar grandes volúmenes de datos en tiempo real?",
+        "¿Existen herramientas y plataformas avanzadas que permiten la integración y acceso seguro a datos de múltiples fuentes en toda la organización?",
+        "¿La infraestructura permite el uso de herramientas avanzadas de analítica y modelos de machine learning e inteligencia artificial?",
+        "¿Los sistemas están diseñados para adaptarse a cambios y crecer según la demanda de datos, con mínima intervención manual?",
+        "¿La empresa invierte de forma continua en nuevas tecnologías y mejoras que optimizan el procesamiento y análisis de datos?",
+    
+        "¿El equipo tiene un nivel avanzado de competencia en ciencia de datos, estadística y técnicas de análisis de datos?",
+        "¿La empresa fomenta una cultura de aprendizaje continuo, proporcionando capacitación avanzada y certificaciones en áreas de análisis de datos y tecnología?",
+        "¿Existe un equipo especializado en análisis de datos que colabora con todas las áreas de la empresa para apoyar la toma de decisiones basada en datos?",
+        "¿Los empleados a todos los niveles comprenden el valor estratégico de los datos y son capaces de interpretar y aplicar insights en su trabajo diario?",
+        "¿La empresa promueve la experimentación y la innovación en el análisis de datos, incentivando el desarrollo de nuevas soluciones y modelos?",
+    
+        "¿La empresa tiene una estrategia bien definida y alineada que prioriza el uso de datos y la analítica para alcanzar sus objetivos estratégicos?",
+        "¿La alta dirección lidera y promueve activamente una cultura de toma de decisiones basada en datos en toda la organización?",
+        "¿La organización está comprometida con la innovación y la transformación digital, utilizando datos como un activo central en todas las áreas?",
+        "¿Existe una cultura organizacional donde cada área colabora y comparte datos para maximizar el valor de los insights?",
+        "¿Los datos son vistos como un activo fundamental, y todos los colaboradores están alineados con la visión de ser una empresa orientada al análisis y manejo de datos?"
     ];
+    
 
     const secciones = [
         "Procesos de Gobernanza y Gestión",
@@ -145,9 +140,7 @@ const NivelBasico: React.FC = () => {
         setMostrarGrafico(true);
     };
 
-    // Función para calcular el promedio general
     const calcularPromedioGeneral = () => {
-        // Calculamos el promedio general sumando los promedios de cada sección
         const totalRespuestas = [
             calcularPromedioPorSeccion(0, 5),
             calcularPromedioPorSeccion(5, 10),
@@ -155,7 +148,6 @@ const NivelBasico: React.FC = () => {
             calcularPromedioPorSeccion(15, 20),
             calcularPromedioPorSeccion(20, 25)
         ];
-
 
         const suma = totalRespuestas.reduce((acumulado, actual) => acumulado + actual, 0);
         return suma / totalRespuestas.length;
@@ -181,7 +173,7 @@ const NivelBasico: React.FC = () => {
     };
 
     return (
-        <div className="nivel-basico container mx-auto p-6 bg-white shadow-lg rounded-lg">
+        <div className="nivel-alto container mx-auto p-6 bg-white shadow-lg rounded-lg">
             {renderSeccionPreguntas("Procesos de Gobernanza y Gestión", preguntas.slice(0, 5), 0)}
             {renderSeccionPreguntas("Procesos Analíticos", preguntas.slice(5, 10), 5)}
             {renderSeccionPreguntas("Infraestructura Tecnológica", preguntas.slice(10, 15), 10)}
@@ -205,10 +197,8 @@ const NivelBasico: React.FC = () => {
                     <Radar data={dataGrafico} width="100%" height="100%" />
                 </div>
             )}
-
-
         </div>
     );
 };
 
-export default NivelBasico;
+export default NivelAlto;

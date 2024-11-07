@@ -1,39 +1,32 @@
 // src/components/Footer.tsx
 import React from 'react';
-import { Link } from 'react-router-dom'; // Importa Link
 import { FaInstagram, FaTimes } from 'react-icons/fa'; // Iconos de Instagram y X
+import logo from '../assets/images/logo.svg'; // Importa el logo
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#00215B] text-white py-6 mt-10">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-6">
-        {/* Menú */}
-        <div className="flex flex-col md:flex-row items-center mb-4 md:mb-0">
-          <Link to="/" className="text-white text-lg mx-2 hover:underline">
-            Inicio
-          </Link>
-          <Link to="/encuesta" className="text-white text-lg mx-2 hover:underline">
-            Encuesta
-          </Link>
-          <Link to="/contactanos" className="text-white text-lg mx-2 hover:underline">
-            Contáctanos
-          </Link>
+    <footer className="bg-white text-[#00215B] py-4 mt-10 shadow-[0px_-4px_10px_0px_rgba(0,0,0,0.1)]"> {/* Sombra solo arriba y tamaño reducido */}
+      <div className="container mx-auto px-6">
+
+        {/* Logo centrado */}
+        <div className="flex justify-center my-4">
+          <img src={logo} alt="Logo" className="w-20" /> {/* Tamaño reducido del logo */}
+        </div>
+
+        {/* Copyright */}
+        <div className="text-center text-sm mt-4">
+          <p>&copy; {new Date().getFullYear()} Tu Empresa. Todos los derechos reservados.</p>
         </div>
 
         {/* Iconos de X e Instagram */}
-        <div className="flex space-x-4">
+        <div className="flex justify-center space-x-4 mt-4">
           <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-            <FaInstagram className="text-white text-2xl hover:text-[#D2153D]" />
+            <FaInstagram className="text-[#00215B] text-2xl hover:text-[#D2153D]" />
           </a>
           <a href="https://www.x.com" target="_blank" rel="noopener noreferrer">
-            <FaTimes className="text-white text-2xl hover:text-[#D2153D]" />
+            <FaTimes className="text-[#00215B] text-2xl hover:text-[#D2153D]" />
           </a>
         </div>
-      </div>
-
-      {/* Copyright */}
-      <div className="text-center text-sm mt-4">
-        <p>&copy; {new Date().getFullYear()} Tu Empresa. Todos los derechos reservados.</p>
       </div>
     </footer>
   );

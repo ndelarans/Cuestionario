@@ -11,50 +11,45 @@ import {
     Legend,
 } from 'chart.js';
 
-// Register required components globally with ChartJS
+// Registrar los componentes requeridos en ChartJS
 ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
 
 import ComentarioIcono from '../assets/images/comentario.svg';
 import ComentarioIconoEnviado from '../assets/images/comentario_enviado.svg';
 
-
-const NivelBasico: React.FC = () => {
+const NivelMedio: React.FC = () => {
     const preguntas = [
-        // Procesos de Gobernanza y Gestión
-        "¿Existe una política formal de gobernanza de datos en la empresa?",
-        "¿Los datos se manejan con prácticas estandarizadas y consistentes?",
-        "¿La empresa cuenta con medidas básicas para asegurar la privacidad y seguridad de los datos?",
-        "¿Hay roles y responsabilidades claros para la gestión de los datos?",
-        "¿Las políticas de manejo de datos están documentadas y accesibles para todos?",
-
-        // Procesos Analíticos
-        "¿Se generan reportes básicos regularmente para apoyar la toma de decisiones?",
-        "¿Los análisis de datos suelen realizarse de manera estructurada y consistente?",
-        "¿La empresa utiliza herramientas básicas para el análisis de datos, como hojas de cálculo?",
-        "¿Los datos se emplean en algunos procesos de toma de decisiones?",
-        "¿Existen procedimientos mínimos para la recopilación y verificación de datos?",
-
-        // Infraestructura Tecnológica
-        "¿La empresa cuenta con un sistema básico para almacenar sus datos?",
-        "¿Los datos pueden ser accesibles para los empleados que los necesitan, aunque sea de manera limitada?",
-        "¿Existen herramientas básicas para realizar análisis de datos, aunque sea manualmente?",
-        "¿La infraestructura tecnológica permite el manejo de datos esenciales, aunque sin automatización?",
-        "¿Los sistemas de almacenamiento y procesamiento de datos son suficientes para el volumen de datos actual?",
-
-        // Capacidades y Competencias
-        "¿El equipo tiene competencias básicas para trabajar con datos, como conocimientos de hojas de cálculo?",
-        "¿Los empleados están familiarizados con los conceptos básicos de análisis de datos?",
-        "¿Existen capacitaciones o recursos para mejorar las habilidades en el manejo de datos?",
-        "¿La empresa reconoce la importancia de contar con habilidades de análisis de datos?",
-        "¿Hay colaboradores asignados que poseen experiencia básica en gestión de datos?",
-
-        // Estrategia y Cultura
-        "¿La analítica y el uso de datos se consideran al tomar decisiones estratégicas, aunque de forma limitada?",
-        "¿La empresa valora los datos, aunque no son un elemento fundamental en todas las decisiones?",
-        "¿Se reconoce en algunos niveles de la empresa la importancia de una cultura basada en datos?",
-        "¿La organización está comenzando a crear conciencia sobre el valor de los datos?",
-        "¿Existen esfuerzos iniciales para integrar el uso de datos en la cultura de la empresa?"
+        "¿Existen políticas y procedimientos claros de gobernanza de datos que guían el manejo de datos en la empresa?",
+        "¿La empresa realiza controles regulares para asegurar la calidad y consistencia de los datos?",
+        "¿Se asignan responsables específicos para supervisar el cumplimiento de las políticas de datos?",
+        "¿Hay procesos establecidos para la gestión de acceso y seguridad de los datos en distintos niveles?",
+        "¿La gobernanza de datos está alineada con los objetivos estratégicos de la empresa?",
+    
+        "¿La empresa utiliza datos de manera consistente para realizar análisis descriptivos y algunos análisis predictivos?",
+        "¿Se generan reportes periódicos que ayudan a detectar patrones o tendencias en los datos?",
+        "¿Existen procedimientos estructurados para la recopilación, limpieza y análisis de datos?",
+        "¿La empresa utiliza herramientas que permiten realizar análisis automatizados de datos?",
+        "¿Los análisis de datos se emplean para optimizar ciertos procesos o decisiones clave en la organización?",
+    
+        "¿La infraestructura tecnológica permite almacenar y procesar datos de manera eficiente para el volumen actual de la empresa?",
+        "¿Existen sistemas que permiten a distintos departamentos compartir y acceder a datos cuando es necesario?",
+        "¿La empresa cuenta con herramientas analíticas básicas y avanzadas, aunque limitadas en algunos aspectos?",
+        "¿La infraestructura es suficiente para soportar reportes automatizados y almacenamiento de grandes volúmenes de datos?",
+        "¿La tecnología de la empresa se actualiza periódicamente para mejorar la capacidad de análisis de datos?",
+    
+        "¿El personal cuenta con habilidades intermedias en análisis de datos y uso de herramientas de análisis?",
+        "¿Se ofrecen programas de capacitación para mejorar las competencias analíticas y técnicas del personal?",
+        "¿Hay un equipo de personas con conocimientos específicos en análisis de datos y modelado básico?",
+        "¿Los empleados tienen conocimientos básicos sobre cómo interpretar y utilizar los datos en sus tareas diarias?",
+        "¿La empresa fomenta el desarrollo de habilidades en análisis y manejo de datos entre su personal?",
+    
+        "¿La analítica y el uso de datos están integrados en las decisiones estratégicas de varias áreas de la empresa?",
+        "¿Existe una cultura organizacional que incentiva el uso de datos para justificar decisiones?",
+        "¿La alta dirección reconoce y promueve el valor de los datos y la analítica en la empresa?",
+        "¿Hay una estrategia clara para aumentar el uso de datos y análisis en la toma de decisiones a lo largo de la organización?",
+        "¿Se fomenta la colaboración entre departamentos para mejorar el uso y análisis de datos?"
     ];
+    
 
     const secciones = [
         "Procesos de Gobernanza y Gestión",
@@ -129,7 +124,7 @@ const NivelBasico: React.FC = () => {
                                 onChange={(e) => manejarComentarioCambio(index + offset, e.target.value)}
                             />
                             <button
-                                className="mt-2 bg-red-600 text-white py-2 px-4 rounded w-full md:w-1/2"
+                                className="mt-2 bg-blue-500 text-white py-2 px-4 rounded w-full md:w-1/2"
                                 onClick={() => manejarComentarioEnviar(index + offset)}
                             >
                                 Enviar
@@ -147,7 +142,6 @@ const NivelBasico: React.FC = () => {
 
     // Función para calcular el promedio general
     const calcularPromedioGeneral = () => {
-        // Calculamos el promedio general sumando los promedios de cada sección
         const totalRespuestas = [
             calcularPromedioPorSeccion(0, 5),
             calcularPromedioPorSeccion(5, 10),
@@ -155,7 +149,6 @@ const NivelBasico: React.FC = () => {
             calcularPromedioPorSeccion(15, 20),
             calcularPromedioPorSeccion(20, 25)
         ];
-
 
         const suma = totalRespuestas.reduce((acumulado, actual) => acumulado + actual, 0);
         return suma / totalRespuestas.length;
@@ -173,8 +166,8 @@ const NivelBasico: React.FC = () => {
                     calcularPromedioPorSeccion(15, 20),
                     calcularPromedioPorSeccion(20, 25)
                 ],
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'rgba(54, 162, 235, 0.2)', // Color actualizado
+                borderColor: 'rgba(54, 162, 235, 1)', // Color actualizado
                 borderWidth: 1
             }
         ]
@@ -189,15 +182,15 @@ const NivelBasico: React.FC = () => {
             {renderSeccionPreguntas("Estrategia y Cultura", preguntas.slice(20, 25), 20)}
 
             <div className="mt-6">
-                <h3 className="text-xl font-bold">Promedio General: {calcularPromedioGeneral().toFixed(2)}</h3>
-            </div>
+    <h2 className="text-xl font-bold">Promedio General: {calcularPromedioGeneral().toFixed(2)}</h2>
+    <button
+        className="mt-6 bg-[#00215B] text-white py-2 px-4 rounded w-full md:w-1/2"
+        onClick={manejarEnvioFinal}
+    >
+        Enviar
+    </button>
+</div>
 
-            <button
-                className="mt-6 bg-red-600 text-white py-2 px-4 rounded w-full md:w-1/2"
-                onClick={manejarEnvioFinal}
-            >
-                Enviar
-            </button>
 
             {mostrarGrafico && (
                 <div className="mt-8" style={{ width: '80%', height: '500px' }}>
@@ -205,10 +198,8 @@ const NivelBasico: React.FC = () => {
                     <Radar data={dataGrafico} width="100%" height="100%" />
                 </div>
             )}
-
-
         </div>
     );
 };
 
-export default NivelBasico;
+export default NivelMedio;

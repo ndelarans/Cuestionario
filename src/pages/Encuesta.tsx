@@ -1,15 +1,26 @@
 import React, { useState } from 'react';
 import Formulario from './Formulario';
 import NivelBasico from './NivelBasico';
-import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Usamos react-icons para los íconos
+import NivelMedio from './NivelMedio';
+import NivelAlto from './NivelAlto';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import Footer from './Footer';  // Importa el componente Footer
 
 const Encuesta: React.FC = () => {
-    // Estado para manejar la visibilidad de NivelBasico
     const [isNivelBasicoVisible, setNivelBasicoVisible] = useState(true);
+    const [isNivelMedioVisible, setNivelMedioVisible] = useState(true);
+    const [isNivelAltoVisible, setNivelAltoVisible] = useState(true); 
 
-    // Función para alternar la visibilidad
     const toggleNivelBasico = () => {
         setNivelBasicoVisible(!isNivelBasicoVisible);
+    };
+
+    const toggleNivelMedio = () => {
+        setNivelMedioVisible(!isNivelMedioVisible);
+    };
+
+    const toggleNivelAlto = () => {
+        setNivelAltoVisible(!isNivelAltoVisible);
     };
 
     return (
@@ -23,22 +34,40 @@ const Encuesta: React.FC = () => {
             </h1>
 
             {/* Sección para NivelBasico con ícono de mostrar/ocultar */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 mb-6">
                 <h2 className="text-xl font-semibold">Nivel Básico</h2>
                 <button onClick={toggleNivelBasico} className="text-blue-500">
                     {isNivelBasicoVisible ? <FaEyeSlash /> : <FaEye />}
                 </button>
             </div>
-            
-            {/* Asegurarse de que el NivelBasico esté visible en pantallas pequeñas */}
-            <div className="block sm:hidden">
-                {isNivelBasicoVisible && <NivelBasico />}
+
+            {/* Mostrar NivelBasico en función de la visibilidad */}
+            {isNivelBasicoVisible && <NivelBasico />}
+
+            {/* Sección para NivelMedio con ícono de mostrar/ocultar */}
+            <div className="flex items-center gap-2 mt-10 mb-6">
+                <h2 className="text-xl font-semibold">Nivel Medio</h2>
+                <button onClick={toggleNivelMedio} className="text-blue-500">
+                    {isNivelMedioVisible ? <FaEyeSlash /> : <FaEye />}
+                </button>
             </div>
 
-            {/* Mostrar siempre el NivelBasico en pantallas grandes */}
-            <div className="hidden sm:block">
-                {isNivelBasicoVisible && <NivelBasico />}
+            {/* Mostrar NivelMedio en función de la visibilidad */}
+            {isNivelMedioVisible && <NivelMedio />}
+
+            {/* Sección para NivelAlto con ícono de mostrar/ocultar */}
+            <div className="flex items-center gap-2 mt-10 mb-6">
+                <h2 className="text-xl font-semibold">Nivel Alto</h2>
+                <button onClick={toggleNivelAlto} className="text-blue-500">
+                    {isNivelAltoVisible ? <FaEyeSlash /> : <FaEye />}
+                </button>
             </div>
+
+            {/* Mostrar NivelAlto en función de la visibilidad */}
+            {isNivelAltoVisible && <NivelAlto />}
+
+            {/* Agregar Footer debajo del contenido */}
+            <Footer />
         </div>
     );
 };

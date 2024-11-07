@@ -14,7 +14,7 @@ const Header: React.FC = () => {
       <nav className="flex-grow text-center space-x-4 text-[#00215B] font-medium mt-4 md:mt-0 md:flex md:justify-center md:ml-96"> {/* Alinea y ajusta el margen en pantallas pequeñas */}
         <Link to="/" className="mr-4">Inicio</Link>
         <Link to="/encuesta" className="mr-4">Encuesta</Link>
-        <Link to="/contacto">Contactanos</Link>
+        <Link to="/contacto">Contáctanos</Link>
       </nav>
     </header>
   );
