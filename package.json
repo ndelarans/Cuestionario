@@ -12,8 +12,11 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "axios": "^1.7.7",
     "chart.js": "^4.4.6",
     "emailjs-com": "^3.2.0",
+    "gapi-script": "^1.2.0",
+    "googleapis": "^144.0.0",
     "react": "^18.3.1",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.3.1",

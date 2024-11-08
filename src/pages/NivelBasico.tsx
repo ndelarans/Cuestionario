@@ -69,7 +69,7 @@ const NivelBasico: React.FC = () => {
     const [cuadroComentarioAbierto, setCuadroComentarioAbierto] = useState<boolean[]>(Array(preguntas.length).fill(false));
     const [iconoComentarioColor, setIconoComentarioColor] = useState<boolean[]>(Array(preguntas.length).fill(false));
     const [mostrarGrafico, setMostrarGrafico] = useState(false);
-
+    
     const manejarRespuestaSeleccionada = (index: number, respuesta: number) => {
         const nuevasRespuestas = [...respuestasSeleccionadas];
         nuevasRespuestas[index] = respuesta;
